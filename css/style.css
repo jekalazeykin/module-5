@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   background-size: cover;
-  font-family: Pathway Gothic One, sans-serif;
+  font-family: 'Pathway Gothic One', sans-serif;
 }
 
 header {
@@ -17,18 +17,28 @@ header ul {
   margin: 50px auto;
   padding: 0;
   list-style: none;
-  color: #ffffff;
   text-align: center;
+  text-decoration: none;
 }
 
 header ul>li {
   display: inline-block;
   padding-left: 30px;
   padding-right: 30px;
-
 }
 
-header ul>li:hover {
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.submenu__item>a {
+  color: #6b7488;
+  font-size: 15px;
+}
+
+header ul>li>a:hover {
   color: #263555;
 }
 
@@ -132,23 +142,34 @@ main {
   color: #ffffff;
 }
 
-main::after {
-  content: url(../images/layer3.png) '___' url(../images/layer1.png);
-  color:  #38afe5;
-  text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-align: center;
-  height: 10em;
-  line-height: 5.5em;
-  display: block;
-  position: absolute;
+.slade {
   width: 90px;
   height: 90px;
+  display: flex;
+  flex-direction: row;
   border-radius: 50%;
-  background-color: #38afe5;
+  overflow: hidden;
+  position: absolute;
   top: 500px;
   left: 90px;
+}
+
+.first, .second {
+  width: 45px;
+  height: 90px;
+  text-align: center;
+  line-height: 3.5;
+  background-color: #38afe5;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+.first:hover {
+  opacity: 0.5;
+}
+
+.second:hover {
+  opacity: 0.5;
 }
 
 .title {
@@ -168,7 +189,15 @@ footer {
   display: block;
 }
 
-.venice {
+.new_york:hover>.card {
+  display: block;
+}
+
+.paris:hover>.card {
+  display: block;
+}
+
+.venice, .new_york, .paris {
   width: 290px;
   height: 270px;
   position: relative;
@@ -180,13 +209,13 @@ footer {
   background-color: #193149;
   position: absolute;
   top: 0;
-  left: 0x;
+  left: 0;
   padding: 0 5px;
   color: #ffffff;
   display: none;
 }
 
-.card h2 {
+h2 {
   text-align: center;
 }
 
