@@ -11,37 +11,6 @@ header {
   font-size: 130%;
 }
 
-header ul {
-  width: 830px;
-  height: 300px;
-  margin: 50px auto;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  text-decoration: none;
-}
-
-header ul>li {
-  display: inline-block;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.submenu__item>a {
-  color: #6b7488;
-  font-size: 15px;
-}
-
-header ul>li>a:hover {
-  color: #263555;
-}
-
 .logo {
   background-color: #ffffff;
   color: #263555;
@@ -68,48 +37,81 @@ h1 {
   margin: 0 auto 700px;
 }
 
-.submenu {
-  display: none;
-}
-
-.menu__item:hover>.submenu {
-  display: block;
-}
-
 .menu {
+  width: 830px;
+  margin: 50px auto;
+}
+
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  list-style: none;
+  align-items: baseline;
+}
+
+.menu__item>li {
   position: relative;
+}
+
+.menu__item>li>a {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu__item>li>a:hover {
+  color: #263555;
 }
 
 .submenu {
   position: absolute;
-  padding: 0;
-  margin: 0;
-  width: 60px;
-  height: 80px;
+  padding-top: 30px;
+  visibility: hidden;
+  transition: all .7s;
+  opacity: 0;
+  left: -3px;
+  top: 10px;
+}
+
+.submenu>ul {
+  position: relative;
   background-color: #ffffff;
-  color: #6b7488;
+  list-style: none;
+  padding-left: 5px;
+  padding-right: 5px;
   border-radius: 3px;
-  top: 105px;
-  left: 135px;
 }
 
-.submenu__item {
-  font-size: 70%;
-  text-align: center;
-  padding: 3px;
-}
-
-.submenu::before {
+.submenu>ul::before {
   content: '';
-  display: inline-block;
+  display: block;
   position: absolute;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 5px 8px 5px;
   border-color: transparent transparent #ffffff transparent;
-  left: 26px;
   top: -8px;
+  left: 18px;
+}
+
+.submenu>ul a {
+  display: block;
+  line-height: 20px;
+  text-align: center;
+  color: #6b7488;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.menu__item>li:hover .submenu {
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 main {
@@ -161,6 +163,16 @@ main {
   line-height: 3.5;
   background-color: #38afe5;
   font-size: 150%;
+  color: #ffffff;
+}
+
+.first>a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.second>a {
+  text-decoration: none;
   color: #ffffff;
 }
 
